@@ -1,18 +1,21 @@
-import {Text, View, StyleSheet} from "react-native";
+import {Text, View, StyleSheet, TouchableOpacity} from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import ContainerView from "../../components/containerView/ContainerView";
 import CustomButton from "../../components/customButton/CustomButton";
+import RouteNames from "../../constants/routeNames";
 
-export default function GenerateQrCodeScreen() {
+export default function GenerateQrCodeScreen({navigation: {navigate}}) {
     return <ContainerView>
         <View style={styles.rootView}>
             <Text style={styles.textTitle}>
                 Registro de entrada
             </Text>
-            <View style={styles.qrView}>
-                <QRCode size={250} value={"look"}/>
-            </View>
-            <CustomButton text="Gerar QRCode" />
+            <TouchableOpacity onPress={() => navigate(RouteNames.SpotsScreen)}>
+                <View style={styles.qrView}>
+                    <QRCode size={250} value={"look"}/>
+                </View>
+            </TouchableOpacity>
+            <CustomButton text="Gerar QRCode"/>
         </View>
     </ContainerView>
 }
