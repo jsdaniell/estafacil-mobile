@@ -22,7 +22,7 @@ export default function SpotButton({
 const styles = StyleSheet.create({
     rootView: {
         flexDirection: "column",
-        height: 135,
+        height: 115,
         width: 140,
         padding: 20,
         justifyContent: "space-evenly",
