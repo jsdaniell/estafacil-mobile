@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     rootView: {
         flexDirection: "column",
         height: 150,
-        width: 160,
+        width: 140,
         padding: 20,
         justifyContent: "space-evenly",
         alignItems: "center",
