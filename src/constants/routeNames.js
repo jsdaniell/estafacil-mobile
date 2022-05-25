@@ -3,4 +3,5 @@ export default class RouteNames {
     static RegisterScreen = "register-screen"
     static GenerateQrCodeScreen = "generate-qr-code-screen"
     static SpotsScreen = "spots-screen"
+    static InfoScreen = "info-screen"
 }

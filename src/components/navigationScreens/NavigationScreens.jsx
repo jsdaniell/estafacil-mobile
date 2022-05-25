@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {StatusBar} from "expo-status-bar";
 import RouteNames from "../../constants/routeNames";
 import GenerateQrCodeScreen from "../../screens/generateQrCodeScreen/GenerateQrCodeScreen";
+import InfoScreen from "../../screens/infoScreen/InfoScreen";
 import LoginScreen from "../../screens/loginScreen/LoginScreen";
 import RegisterScreen from "../../screens/registerScreen/RegisterScreen";
 import SpotsScreen from "../../screens/spotsScreen/SpotsScreen";
@@ -17,6 +18,7 @@ export default function NavigationScreens() {
             <Stack.Screen name={RouteNames.RegisterScreen} component={RegisterScreen}/>
             <Stack.Screen name={RouteNames.GenerateQrCodeScreen} component={GenerateQrCodeScreen}/>
             <Stack.Screen name={RouteNames.SpotsScreen} component={SpotsScreen}/>
+            <Stack.Screen name={RouteNames.InfoScreen} component={InfoScreen}/>
         </Stack.Navigator>
     </NavigationContainer>
 }

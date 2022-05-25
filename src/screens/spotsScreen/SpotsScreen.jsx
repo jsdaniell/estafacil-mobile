@@ -3,12 +3,17 @@ import {View, StyleSheet, Text} from "react-native";
 import ContainerView from "../../components/containerView/ContainerView";
 import FloorButton from "../../components/floorButton/FloorButton";
 import SpotButton from "../../components/spotButton/SpotButton";
+import RouteNames from "../../constants/routeNames";
 
-export default function SpotsScreen() {
+export default function SpotsScreen({navigation: {navigate}}) {
     const [selectedFloor, setSelectedFloor] = useState(1)
 
-    function changeFloor(nF) {
+    function changeFloor(nF, goToInfo = false) {
         setSelectedFloor(nF)
+
+        if (goToInfo) {
+            navigate(RouteNames.InfoScreen)
+        }
     }
 
     return <ContainerView>
@@ -20,7 +25,7 @@ export default function SpotsScreen() {
                 <View style={styles.rowOfButtons}>
                     <FloorButton active={selectedFloor === 1} text={1} onPress={changeFloor}/>
                     <View style={styles.horizontalDivider}/>
-                    <FloorButton active={selectedFloor === 2} text={2} onPress={changeFloor}/>
+                    <FloorButton active={selectedFloor === 2} text={2} onPress={(nF) => changeFloor(nF, true)}/>
                 </View>
                 <View style={styles.baseDivider}/>
                 <View style={styles.rowOfSpots}>
